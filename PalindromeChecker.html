@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+ <html> 
+    <head> 
+        <title> Palindrome Checker </title>
+    </head>
+    <body style = "background-color: gold;">
+    <h2> Vaughn's Palindrome Checker </h2>
+<i>Quiz</i> <hr>
+        <center>
+          <fieldset>
+            <legend><strong>Result</strong></legend>
+            <div id="output">
+            </div>
+          </fieldset>
+        </center> 
+        <script>
+            var word = prompt("Enter a word:");
+            var out = document.getElementById('output');
+            if (word === null) {
+                out.innerHTML = "<p><b>You entered nothing.</b></p>";
+            } else {
+                var reversed = "";
+                for (var i = word.length - 1; i >= 0; i--) {
+                    reversed += word[i];
+                }
+                var html = "";
+                html += "<p><b>Original:</b> " + word + "</p>";
+                html += "<p><b>Reversed:</b> <b>" + reversed + "</b></p>";
+                if (word === reversed) {
+                    html += "<p><b>Result:</b> The word is a palindrome.</p>";
+                    html += "<p><img src=\"dog.gif\" alt=\"dog\" width=\"220\"></p>";
+                } else {
+                    html += "<p><b>Result:</b>  The word is not a palindrome.</p>";
+                    html += "<p><img src=\"cat.gif\" alt=\"cat\" width=\"220\"></p>";
+                }
+                out.innerHTML = html;
+            }
+    </script>
+  </body>
+</html>
